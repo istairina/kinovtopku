@@ -1,4 +1,5 @@
 import { IMovie } from 'components/MovieList/interface/IMovie';
+import { useNavigate } from 'react-router-dom';
 
 type props = {
   movie: IMovie;
@@ -6,10 +7,13 @@ type props = {
 };
 
 export const MovieItem = (props: props) => {
+  const navigate = useNavigate();
+  const handleClick = () => navigate(`/${props.movie.id}`);
+
   return (
-    <div key={props.key}>
+    <div key={props.key} onClick={handleClick}>
       <img
-        src={`/img/${props.movie.preview}`}
+        src={`http://localhost:3000/${props.movie.preview}`}
         className="card__image"
         alt={`${props.movie.title} poster`}
       />
