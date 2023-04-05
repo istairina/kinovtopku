@@ -7,19 +7,15 @@ import { useLocation } from 'react-router-dom';
 export const MovieDetails = () => {
   const location = useLocation();
   const currentId = location.pathname.slice(1);
-
-  console.log(currentId);
-  const { loading, data, error } = useFetch('http://localhost:3000/catalog');
+  const { loading, data, error } = useFetch(
+    `${import.meta.env.VITE_SERVER_API}catalog?id=${currentId}`
+  );
 
   if (loading) return <Loading />;
 
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
-  let movie: IMovie | undefined = undefined;
-
-  if (data) {
-    movie = data.find((elem: IMovie) => elem.id === +currentId);
-  }
+  const movie: IMovie | undefined = data ? data[0] : undefined;
 
   return (
     <>

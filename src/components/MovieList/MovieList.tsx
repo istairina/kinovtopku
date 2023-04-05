@@ -4,7 +4,7 @@ import { MovieItem } from 'components/MovieItem';
 import { Loading } from 'components/Loading';
 
 export const MovieList = () => {
-  const { loading, data, error } = useFetch('http://localhost:3000/catalog');
+  const { loading, data, error } = useFetch(`${import.meta.env.VITE_SERVER_API}catalog`);
 
   if (loading) return <Loading />;
 
@@ -14,7 +14,8 @@ export const MovieList = () => {
     <div className="cards__wrap">
       {data &&
         data.map((elem) => {
-          return <MovieItem movie={elem} key={uuidv4()} />;
+          const uuid = uuidv4();
+          return <MovieItem movie={elem} key={uuid} id={uuid} />;
         })}
     </div>
   );

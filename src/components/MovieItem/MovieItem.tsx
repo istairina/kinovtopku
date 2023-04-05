@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 type props = {
   movie: IMovie;
   key: React.Key;
+  id: string;
 };
 
 export const MovieItem = (props: props) => {
@@ -11,9 +12,9 @@ export const MovieItem = (props: props) => {
   const handleClick = () => navigate(`/${props.movie.id}`);
 
   return (
-    <div key={props.key} onClick={handleClick}>
+    <div key={props.id} onClick={handleClick}>
       <img
-        src={`http://localhost:3000/${props.movie.preview}`}
+        src={`${import.meta.env.VITE_SERVER_API}${props.movie.preview}`}
         className="card__image"
         alt={`${props.movie.title} poster`}
       />
