@@ -1,7 +1,7 @@
 export interface IMovie {
   id: number;
   title: string;
-  release: Date;
+  release: string;
   director: string[];
   screenwriter: string[];
   operator: string;
