@@ -1,7 +1,7 @@
 import { Carousel } from 'components/Carousel';
 import { Loading } from 'components/Loading';
-import useFetch from 'components/MovieList/hook/useFetch';
-import { IMovie } from 'components/MovieList/interface/IMovie';
+import useFetch from 'utils/hook/useFetch';
+import { IMovie } from 'utils/interface/IMovie';
 import { useLocation } from 'react-router-dom';
 
 export const MovieDetails = () => {

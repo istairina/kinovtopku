@@ -11,4 +11,5 @@ export interface IMovie {
   poster: string;
   preview: string;
   screenshots: string[];
+  type: string;
 }

@@ -1,4 +1,4 @@
-import { IMovie } from 'components/MovieList/interface/IMovie';
+import { IMovie } from 'utils/interface/IMovie';
 import { useNavigate } from 'react-router-dom';
 
 type props = {
@@ -15,7 +15,7 @@ export const MovieItem = (props: props) => {
     <div
       key={props.id}
       onClick={handleClick}
-      className="mb-10 mr-10 flex min-h-[255px] min-w-[485px] max-w-[1000px] flex-row rounded border-2 bg-orange-50 p-5"
+      className="mb-5 mr-10 flex min-h-[255px] min-w-[485px] max-w-[1000px] flex-row rounded border-2 bg-orange-50 p-5"
     >
       <div className="w-200px">
         <img
