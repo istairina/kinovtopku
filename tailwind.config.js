@@ -11,6 +11,7 @@ export default {
     cursor: {
       'zoom-in': 'zoom-in',
       'zoom-out': 'zoom-out',
+      pointer: 'pointer',
     },
   },
   plugins: [],

@@ -20,20 +20,25 @@ export const MovieItem = (props: props) => {
       <div className="w-200px">
         <img
           src={`${import.meta.env.VITE_SERVER_API}${props.movie.preview}`}
-          className="block h-auto w-[100%] cursor-pointer"
+          className="block h-auto w-[100%] cursor-zoom-in"
           alt={`${props.movie.title} poster`}
         />
       </div>
       <div className="pl-5">
-        <p className="pb-5">
+        <p className="pb-2">
           <span>Название фильма: </span>
           <span className="font-bold">{props.movie.title}</span>
         </p>
-        <p className="pb-5">
+        <p className="pb-2">
           Дата выхода: <span className="font-bold">{String(props.movie.release)}</span>
         </p>
-        <p>
+        <p className="pb-5">
           Краткое описание: <span className="italic">{props.movie.shortDescription}</span>
+        </p>
+        <p>
+          <span onClick={handleClick} className="cursor-pointer underline">
+            Подробнее...
+          </span>
         </p>
       </div>
     </div>

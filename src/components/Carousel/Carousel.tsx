@@ -36,13 +36,13 @@ export const Carousel = (props: props) => {
               props.screenshots[currentIndex]
             })`,
           }}
-          className="h-full w-full cursor-zoom-in rounded-2xl bg-cover bg-center duration-500"
+          className="h-full w-full cursor-zoom-in rounded-xl bg-cover bg-center duration-500"
           onClick={handleClick}
         ></div>
-        <div className="cursor-pointer absolute left-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block">
+        <div className="absolute left-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block">
           <BsChevronCompactLeft size={30} onClick={prevSlide} />
         </div>
-        <div className="cursor-pointer absolute right-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block">
+        <div className="absolute right-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block">
           <BsChevronCompactRight size={30} onClick={nextSlide} />
         </div>
       </div>
@@ -61,10 +61,10 @@ export const Carousel = (props: props) => {
               className="roundex-2xl h-[inherit] w-[80%] cursor-zoom-out rounded-xl bg-cover bg-center duration-500"
               onClick={handleClick}
             ></div>
-            <div className="cursor-pointer absolute left-5 top-[50%] -translate-x-0 translate-y-[-50%] rounded-full bg-black/20 p-2 text-2xl text-white ">
+            <div className="absolute left-5 top-[50%] -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white ">
               <BsChevronCompactLeft size={30} onClick={prevSlide} />
             </div>
-            <div className="cursor-pointer absolute right-5 top-[50%] -translate-x-0 translate-y-[-50%] rounded-full bg-black/20 p-2 text-2xl text-white ">
+            <div className="absolute right-5 top-[50%] -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white ">
               <BsChevronCompactRight size={30} onClick={nextSlide} />
             </div>
           </div>
