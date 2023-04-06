@@ -21,7 +21,11 @@ export const MovieDetails = () => {
     <>
       {movie && (
         <div>
-          <img src={`/img/${movie.poster}`} className="card__image" alt={`${movie.title} poster`} />
+          <img
+            src={`${import.meta.env.VITE_SERVER_API}${movie.poster}`}
+            className="card__image"
+            alt={`${movie.title} poster`}
+          />
           <div>
             <p>
               Название фильма: <span className="card__name">{movie.title}</span>
