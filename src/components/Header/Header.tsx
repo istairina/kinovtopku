@@ -9,7 +9,8 @@ export const Header = () => {
         <img src="img/logo.png" alt="logo" />
       </div>
       <div className="flex w-[80%] justify-center text-3xl font-bold uppercase">
-        Kino<span className="text-mainColor">v</span>
+        <span className="text-white">Kino</span>
+        <span className="text-mainColor">v</span>
         <span className="text-accentColor">topku</span>
       </div>
     </header>

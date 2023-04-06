@@ -29,7 +29,7 @@ export const Carousel = (props: props) => {
 
   return (
     <>
-      <div className="group relative m-auto h-[780px] w-full max-w-[1400px] px-4 py-16">
+      <div className="group relative m-auto h-full w-full max-w-[1400px] px-4 py-16">
         <div
           style={{
             backgroundImage: `url(${import.meta.env.VITE_SERVER_API}${

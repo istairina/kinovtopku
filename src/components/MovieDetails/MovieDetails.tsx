@@ -17,37 +17,43 @@ export const MovieDetails = () => {
 
   const movie: IMovie | undefined = data ? data[0] : undefined;
 
+  let pluralScr = '';
+  if (movie) {
+    pluralScr = movie.screenwriter.length > 1 ? 'ы' : '';
+  }
+
   return (
     <>
       {movie && (
-        <div>
+        <div className="mx-auto flex min-w-[600px] max-w-[1000px] overflow-hidden rounded-xl bg-orange-100">
           <img
             src={`${import.meta.env.VITE_SERVER_API}${movie.poster}`}
-            className="card__image"
+            className="pr-5"
             alt={`${movie.title} poster`}
           />
-          <div>
-            <p>
-              Название фильма: <span className="card__name">{movie.title}</span>
+          <div className="py-10">
+            <p className="pb-2">
+              Название фильма: <span className="font-bold">{movie.title}</span>
+            </p>
+            <p className="pb-2">
+              Режиссер: <span className="font-bold">{movie.director}</span>
+            </p>
+            <p className="pb-2">
+              Сценарист{pluralScr}:
+              <span className="font-bold"> {movie.screenwriter.join(', ')}</span>
+            </p>
+            <p className="pb-2">
+              Оператор: <span className="font-bold">{movie.operator}</span>
+            </p>
+            <p className="pb-2">
+              В главных ролях: <span className="font-bold">{movie.starring.join(', ')}</span>
             </p>
             <p>
-              Режиссер: <span className="card__name">{movie.director}</span>
+              Описание: <span className="italic">{movie.description}</span>
             </p>
-            <p>
-              Сценарист: <span className="card__name">{movie.screenwriter.join(', ')}</span>
-            </p>
-            <p>
-              Оператор: <span className="card__name">{movie.operator}</span>
-            </p>
-            <p>
-              В главных ролях: <span className="card__name">{movie.starring.join(', ')}</span>
-            </p>
-            <p>
-              Описание: <span className="card__eats">{movie.description}</span>
-            </p>
-          </div>
-          <div>
-            <Carousel screenshots={movie.screenshots} />
+            <div className="h-[100px] w-[100%]">
+              <Carousel screenshots={movie.screenshots} />
+            </div>
           </div>
         </div>
       )}
