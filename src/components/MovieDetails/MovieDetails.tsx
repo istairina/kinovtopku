@@ -28,7 +28,7 @@ export const MovieDetails = () => {
         <div className="mx-auto flex min-w-[600px] max-w-[1000px] overflow-hidden rounded-xl bg-orange-100 pr-5">
           <img
             src={`${import.meta.env.VITE_SERVER_API}${movie.poster}`}
-            className="pr-5"
+            className="max-w-[500px] pr-5"
             alt={`${movie.title} poster`}
           />
           <div className="py-10">

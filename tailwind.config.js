@@ -8,6 +8,10 @@ export default {
         accentColor: '#ee2d1e',
       },
     },
+    cursor: {
+      'zoom-in': 'zoom-in',
+      'zoom-out': 'zoom-out',
+    },
   },
   plugins: [],
 };
