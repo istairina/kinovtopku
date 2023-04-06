@@ -11,7 +11,7 @@ export const MovieList = () => {
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
   return (
-    <div className="cards__wrap">
+    <div className="flex w-[100%] flex-wrap px-20">
       {data &&
         data.map((elem) => {
           const uuid = uuidv4();
