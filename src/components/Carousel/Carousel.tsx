@@ -7,7 +7,7 @@ type props = {
 
 export const Carousel = (props: props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -48,7 +48,7 @@ export const Carousel = (props: props) => {
       </div>
       {showPopup && (
         <div
-          className="z-2 modal  fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black/90"
+          className="z-2 modal fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black/90"
           onClick={handleClick}
         >
           <div
@@ -57,7 +57,7 @@ export const Carousel = (props: props) => {
                 props.screenshots[currentIndex]
               })`,
             }}
-            className="roundex-2xl h-[60%] w-[80%] bg-cover bg-center duration-500"
+            className="roundex-2xl h-[inherit] w-[80%] bg-cover bg-center duration-500"
           ></div>
           <div className="absolute left-5 top-[50%] -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white ">
             <BsChevronCompactLeft size={30} onClick={prevSlide} />
