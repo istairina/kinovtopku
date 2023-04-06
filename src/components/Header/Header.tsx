@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header className="my-5 flex w-full items-center justify-between px-20">
       <div className="h-auto w-[100px] cursor-pointer" onClick={() => navigate('/')}>
-        <img src="src/assets/images/logo.png" alt="logo" />
+        <img src="img/logo.png" alt="logo" />
       </div>
       <div className="flex w-[80%] justify-center text-3xl font-bold uppercase">
         Kino<span className="text-mainColor">v</span>
