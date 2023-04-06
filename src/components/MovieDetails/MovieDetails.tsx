@@ -25,7 +25,7 @@ export const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <div className="mx-auto flex min-w-[600px] max-w-[1000px] overflow-hidden rounded-xl bg-orange-100">
+        <div className="mx-auto flex min-w-[600px] max-w-[1000px] overflow-hidden rounded-xl bg-orange-100 pr-5">
           <img
             src={`${import.meta.env.VITE_SERVER_API}${movie.poster}`}
             className="pr-5"
@@ -51,7 +51,7 @@ export const MovieDetails = () => {
             <p>
               Описание: <span className="italic">{movie.description}</span>
             </p>
-            <div className="h-[100px] w-[100%]">
+            <div className="h-[300px] w-[100%]">
               <Carousel screenshots={movie.screenshots} />
             </div>
           </div>
