@@ -15,7 +15,7 @@ export const MovieItem = (props: props) => {
     <div
       key={props.id}
       onClick={handleClick}
-      className="mb-5 flex min-h-[255px] min-w-[485px] max-w-[100%] rounded border-2 bg-orange-50 p-2"
+      className="mb-5 flex min-h-[255px] min-w-[485px] max-w-[100%] flex-col rounded border-2 bg-orange-50 p-2 sm:flex-row"
     >
       <div className="w-200px">
         <img

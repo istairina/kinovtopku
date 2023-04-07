@@ -7,6 +7,9 @@ export default {
         mainColor: '#00828f',
         accentColor: '#ee2d1e',
       },
+      screens: {
+        sm: '550px',
+      },
     },
     cursor: {
       'zoom-in': 'zoom-in',

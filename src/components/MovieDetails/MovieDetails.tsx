@@ -25,13 +25,13 @@ export const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <div className="mx-auto flex min-w-[600px] max-w-[100%] overflow-hidden rounded-xl bg-orange-100 pr-2">
+        <div className="mx-auto flex max-w-[100%] flex-col overflow-hidden rounded-xl bg-orange-100 sm:min-w-[600px] sm:flex-row sm:pr-2">
           <img
             src={`${import.meta.env.VITE_SERVER_API}${movie.poster}`}
-            className="max-w-[400px] pr-5"
+            className="max-w-[100%] sm:max-w-[400px] sm:pr-5"
             alt={`${movie.title} poster`}
           />
-          <div className="py-5">
+          <div className="px-3 sm:px-0 sm:py-5">
             <p className="pb-2">
               Название фильма: <span className="font-bold">{movie.title}</span>
             </p>
