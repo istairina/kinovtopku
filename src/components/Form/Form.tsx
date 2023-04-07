@@ -19,6 +19,7 @@ export const Form = ({ listYears, updateFilter }: props) => {
         multiple
         size={3}
         className="w-[100px] p-1"
+        defaultValue={listYears}
         {...register('year', {
           onChange: collectData,
         })}
