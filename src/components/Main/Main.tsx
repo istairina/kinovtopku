@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 export const Main = () => {
   return (
-    <main>
+    <main className="mx-auto max-w-[1200px] px-7">
       <Routes>
         <Route path="/" element={<MovieList />} />
         <Route path="/:id" element={<MovieDetails />} />

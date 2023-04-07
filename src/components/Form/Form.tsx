@@ -15,7 +15,7 @@ export const Form = ({ listYears, updateFilter }: props) => {
   };
 
   return (
-    <form className="mb-5 flex">
+    <form className="mb-5 flex w-full">
       <select
         multiple
         size={3}

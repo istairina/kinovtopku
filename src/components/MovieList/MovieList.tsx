@@ -32,7 +32,7 @@ export const MovieList = () => {
   };
 
   return (
-    <div className="flex w-[100%] flex-wrap px-20">
+    <div className="w-max-[100%] mx-auto flex flex-wrap">
       <Form listYears={getListYears()} updateFilter={updateFilter} />
       {data &&
         data

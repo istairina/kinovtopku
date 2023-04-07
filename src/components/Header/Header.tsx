@@ -4,7 +4,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="my-5 flex w-full items-center justify-between px-20">
+    <header className="mx-auto my-5 flex max-w-[1200px] items-center justify-between px-7">
       <div className="h-auto w-[100px] cursor-pointer" onClick={() => navigate('/')}>
         <img src="img/logo.png" alt="logo" />
       </div>
