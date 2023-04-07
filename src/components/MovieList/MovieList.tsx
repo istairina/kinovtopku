@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
 import useFetch from '../../utils/hook/useFetch';
 import { MovieItem } from 'components/MovieItem';
 import { Loading } from 'components/Loading';
 import { Form } from 'components/Form';
-import { useState } from 'react';
 import IFilter from '../../utils/interface/IFilter';
+import { getListYears } from './utils/getListYears';
 
 export const MovieList = () => {
   const { loading, data, error } = useFetch(`${import.meta.env.VITE_SERVER_API}catalog`);
@@ -14,18 +14,7 @@ export const MovieList = () => {
   });
 
   if (loading) return <Loading />;
-
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
-
-  const getListYears = () => {
-    let res: string[] = [];
-    if (data) {
-      res = data.map((elem) => {
-        return elem.release.slice(-4);
-      });
-    }
-    return res.sort();
-  };
 
   const updateFilter = (data: IFilter) => {
     setFilter(data);
@@ -33,7 +22,7 @@ export const MovieList = () => {
 
   return (
     <div className="w-max-[100%] mx-auto flex flex-wrap">
-      <Form listYears={getListYears()} updateFilter={updateFilter} />
+      <Form listYears={getListYears(data || undefined)} updateFilter={updateFilter} />
       {data &&
         data
           .filter((elem) => elem.type === filter?.typeMovie)
@@ -41,8 +30,7 @@ export const MovieList = () => {
             filter!.year.length > 0 ? filter?.year.some((y) => elem.release.slice(-4) === y) : true
           )
           .map((elem) => {
-            const uuid = uuidv4();
-            return <MovieItem movie={elem} key={uuid} id={uuid} />;
+            return <MovieItem movie={elem} key={elem.id} />;
           })}
     </div>
   );

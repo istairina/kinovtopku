@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 type props = {
   movie: IMovie;
-  key: React.Key;
-  id: string;
 };
 
 export const MovieItem = (props: props) => {
@@ -13,7 +11,6 @@ export const MovieItem = (props: props) => {
 
   return (
     <div
-      key={props.id}
       onClick={handleClick}
       className="mb-5 flex min-h-[255px] min-w-[485px] max-w-[100%] flex-col rounded border-2 bg-orange-50 p-2 sm:flex-row"
     >

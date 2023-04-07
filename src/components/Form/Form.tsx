@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { useForm } from 'react-hook-form';
 import IFilter from 'utils/interface/IFilter';
 
@@ -26,7 +25,7 @@ export const Form = ({ listYears, updateFilter }: props) => {
       >
         {listYears &&
           listYears.map((year) => {
-            return <option key={uuidv4()}>{year}</option>;
+            return <option key={year}>{year}</option>;
           })}
       </select>
       <fieldset className="ml-10 text-white">
